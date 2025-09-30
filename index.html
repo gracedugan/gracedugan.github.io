@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grace Dugan | Writer & Editor</title>
+    <style>
+        /* FONTS - Change these if you want different fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400;600&display=swap');
+        
+        /* BASIC RESET */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        /* MAIN STYLING */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fafafa;
+        }
+        
+        /* CONTAINER - Centers content and adds padding */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        /* PROFILE SECTION */
+        .profile {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        /* PROFILE IMAGE - Replace the src in HTML to change photo */
+        .profile-image {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        /* NAME HEADING */
+        h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3em;
+            font-weight: 300;
+            margin-bottom: 10px;
+            color: #2c2c2c;
+        }
+        
+        /* SUBTITLE */
+        .subtitle {
+            font-size: 1.2em;
+            color: #666;
+            font-weight: 300;
+            letter-spacing: 2px;
+            margin-bottom: 40px;
+        }
+        
+        /* BIO SECTION */
+        .bio {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+        
+        /* PARAGRAPHS - Edit spacing between paragraphs here */
+        .bio p {
+            margin-bottom: 20px;
+            font-size: 1.05em;
+            color: #555;
+            line-height: 1.8;
+        }
+        
+        .bio p:last-child {
+            margin-bottom: 0;
+        }
+        
+        /* GREETING TEXT */
+        .greeting {
+            font-weight: 600;
+            color: #2c2c2c;
+        }
+        
+        /* RESPONSIVE - Makes it look good on phones */
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 15px;
+            }
+            
+            h1 {
+                font-size: 2.2em;
+            }
+            
+            .profile-image {
+                width: 200px;
+                height: 200px;
+            }
+            
+            .bio {
+                padding: 25px;
+            }
+            
+            .bio p {
+                font-size: 1em;
+            }
+        }
+        
+        /* COLOR CUSTOMIZATION GUIDE:
+           - Background color: Change #fafafa in body
+           - Text color: Change #333 in body
+           - Card background: Change white in .bio
+           - Heading color: Change #2c2c2c in h1
+           - Link color (if you add links): Add a { color: #your-color; }
+        */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- PROFILE SECTION -->
+        <div class="profile">
+            <!-- TO CHANGE YOUR PHOTO: Replace the src with your image URL or local path -->
+            <img src="https://static.wixstatic.com/media/42f85d_d9b06b5084534c53b20aed272b639762~mv2.jpg/v1/crop/x_114,y_0,w_2588,h_2586/fill/w_433,h_433,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/original_558d5934-4d62-423c-b970-58af035b1055_PXL_20220616_223842769_PORTRAIT.jpg" 
+                 alt="Grace Dugan" 
+                 class="profile-image">
+            
+            <!-- TO CHANGE YOUR NAME: Edit the text between the <h1> tags -->
+            <h1>Grace Dugan</h1>
+            
+            <!-- TO CHANGE YOUR TITLE: Edit the text below -->
+            <p class="subtitle">Writer & Editor</p>
+        </div>
+        
+        <!-- BIO SECTION -->
+        <!-- TO EDIT YOUR BIO: Simply change the text between <p> tags -->
+        <!-- TO ADD MORE PARAGRAPHS: Copy a <p>...</p> block and paste it -->
+        <div class="bio">
+            <p class="greeting">Hello and welcome! I'm Grace, an adaptable writer who happily migrates between technical and creative subjects.</p>
+            
+            <p>Within the software world, I'm passionate about translating highly technical information into comprehensive, consumable, and widely accessible content. I love learning the "why" behind complex technical choices and understanding how multi-layered systems work to create something engaging for both internal and external consumers.</p>
+            
+            <p>As a creative, I love finding the best way to tell a story -- seeking out topics, generating engaging copy, editing dutifully, using a designers eye to structure information meaningfully and artistically. I've worked with poems, slogans, novels, zine spreads, and more!</p>
+        </div>
+    </div>
+</body>
+</html>
