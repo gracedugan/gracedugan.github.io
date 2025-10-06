@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact | Grace Dugan</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400;600&display=swap');
-        
         * {
             margin: 0;
             padding: 0;
@@ -14,192 +12,253 @@
         }
         
         body {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Avenir', 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background-color: #fafafa;
+            color: #3a3a3a;
+            background-color: #e8e4dd;
         }
         
-        nav {
+        header {
             background: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        
-        nav .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
+            padding: 20px 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
         
-        nav .logo {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.5em;
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .orange-dot {
+            width: 30px;
+            height: 30px;
+            background: #d4884f;
+            border-radius: 50%;
+        }
+        
+        .logo-text h1 {
+            font-size: 1.1em;
             font-weight: 600;
-            color: #2c2c2c;
-            text-decoration: none;
+            color: #3a3a3a;
+            margin: 0;
         }
         
-        nav ul {
-            list-style: none;
+        .logo-text p {
+            font-size: 0.85em;
+            color: #666;
+            margin: 0;
+        }
+        
+        nav {
             display: flex;
             gap: 30px;
         }
         
         nav a {
             text-decoration: none;
-            color: #555;
-            font-weight: 400;
+            color: #3a3a3a;
+            font-size: 0.95em;
             transition: color 0.3s;
         }
         
-        nav a:hover {
-            color: #2c2c2c;
-        }
-        
+        nav a:hover,
         nav a.active {
-            color: #2c2c2c;
-            font-weight: 600;
+            color: #d4884f;
         }
         
-        .container {
-            max-width: 700px;
-            margin: 0 auto;
-            padding: 60px 20px;
+        .contact-container {
+            max-width: 1100px;
+            margin: 80px auto;
+            padding: 0 40px;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 80px;
+            align-items: start;
         }
         
-        h1 {
-            font-family: 'Cormorant Garamond', serif;
+        .contact-left h1 {
             font-size: 3em;
-            font-weight: 300;
-            margin-bottom: 20px;
-            color: #2c2c2c;
-            text-align: center;
+            font-weight: 600;
+            color: #3a3a3a;
+            margin-bottom: 50px;
         }
         
-        .contact-intro {
-            text-align: center;
+        .contact-info h3 {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #3a3a3a;
+            margin-bottom: 10px;
+        }
+        
+        .contact-info p {
             color: #555;
-            font-size: 1.1em;
-            margin-bottom: 40px;
-        }
-        
-        .contact-card {
-            background: white;
-            padding: 50px 40px;
-            border-radius: 8px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-            text-align: center;
-        }
-        
-        .contact-card h2 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.8em;
-            font-weight: 400;
-            margin-bottom: 20px;
-            color: #2c2c2c;
-        }
-        
-        .contact-card p {
-            color: #666;
-            font-size: 1.1em;
             margin-bottom: 30px;
         }
         
-        .contact-methods {
+        .contact-info a {
+            color: #555;
+            text-decoration: none;
+        }
+        
+        .contact-info a:hover {
+            color: #d4884f;
+        }
+        
+        .contact-form {
+            display: grid;
+            gap: 20px;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .form-group {
             display: flex;
             flex-direction: column;
-            gap: 20px;
-            margin-top: 30px;
         }
         
-        .contact-method {
-            background: #fafafa;
-            padding: 20px;
-            border-radius: 6px;
-            transition: transform 0.3s, box-shadow 0.3s;
+        .form-group label {
+            margin-bottom: 8px;
+            color: #3a3a3a;
+            font-size: 0.95em;
         }
         
-        .contact-method:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        .form-group input,
+        .form-group textarea {
+            padding: 12px;
+            border: 1px solid #999;
+            background: white;
+            font-family: inherit;
+            font-size: 1em;
+            color: #3a3a3a;
         }
         
-        .contact-method a {
-            text-decoration: none;
-            color: #2c2c2c;
-            font-weight: 500;
-            font-size: 1.1em;
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #d4884f;
         }
         
-        .contact-method-label {
-            font-size: 0.9em;
-            color: #999;
-            margin-bottom: 5px;
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
         }
         
-        @media (max-width: 768px) {
-            nav ul {
-                gap: 15px;
+        .submit-btn {
+            padding: 15px 40px;
+            background: white;
+            border: 2px solid #d4884f;
+            color: #d4884f;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            justify-self: start;
+        }
+        
+        .submit-btn:hover {
+            background: #d4884f;
+            color: white;
+        }
+        
+        @media (max-width: 968px) {
+            header {
+                flex-direction: column;
+                gap: 20px;
+                padding: 20px;
             }
             
-            nav a {
-                font-size: 0.9em;
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 50px;
+                padding: 0 20px;
+                margin: 50px auto;
             }
             
-            .container {
-                padding: 40px 15px;
+            .contact-left h1 {
+                font-size: 2em;
             }
             
-            h1 {
-                font-size: 2.2em;
-            }
-            
-            .contact-card {
-                padding: 30px 20px;
+            .form-row {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
-    <nav>
-        <div class="nav-container">
-            <a href="index.html" class="logo">Grace Dugan</a>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="resume.html">Resume</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
-                <li><a href="contact.html" class="active">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <div class="container">
-        <h1>Contact</h1>
-        
-        <div class="contact-card">
-            <h2>Let's Connect</h2>
-            <p>Thanks for reaching out! I'll follow up as soon as possible.</p>
-            
-            <!-- TO ADD YOUR CONTACT INFO: Replace the email/links below with your actual info -->
-            <div class="contact-methods">
-                <div class="contact-method">
-                    <div class="contact-method-label">Email</div>
-                    <a href="mailto:your.email@example.com">your.email@example.com</a>
-                </div>
-                
-                <div class="contact-method">
-                    <div class="contact-method-label">LinkedIn</div>
-                    <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a>
-                </div>
-                
-                <!-- OPTIONAL: Add more contact methods by copying the block above -->
+    <header>
+        <div class="logo-area">
+            <div class="orange-dot"></div>
+            <div class="logo-text">
+                <h1>Grace Dugan</h1>
+                <p>Writer & Editor</p>
             </div>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="resume.html">Resume</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="contact.html" class="active">Contact</a>
+        </nav>
+    </header>
+
+    <div class="contact-container">
+        <div class="contact-left">
+            <h1>Contact Me</h1>
+            
+            <div class="contact-info">
+                <h3>Phone</h3>
+                <p>(978) 501-6404</p>
+                
+                <h3>Email</h3>
+                <p><a href="mailto:gracedugan@gmail.com">gracedugan@gmail.com</a></p>
+            </div>
+        </div>
+        
+        <div class="contact-right">
+            <!-- NOTE: This form won't actually work without a backend. 
+                 Options to make it work:
+                 1. Use a service like Formspree.io (add action="https://formspree.io/f/YOUR_ID")
+                 2. Use Netlify Forms (add netlify attribute to form tag)
+                 3. Set up your own backend
+            -->
+            <form class="contact-form" action="#" method="POST">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" name="firstName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" name="lastName" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
         </div>
     </div>
 </body>

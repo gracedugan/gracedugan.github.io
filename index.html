@@ -5,151 +5,301 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grace Dugan | Writer & Editor</title>
     <style>
-        /* FONTS - Change these if you want different fonts */
-        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400;600&display=swap');
-        
-        /* BASIC RESET */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
         
-        /* MAIN STYLING */
         body {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Avenir', 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background-color: #fafafa;
+            color: #3a3a3a;
+            background-color: #e8e4dd;
         }
         
-        /* CONTAINER - Centers content and adds padding */
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 60px 20px;
+        /* HEADER */
+        header {
+            background: white;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
         
-        /* PROFILE SECTION */
-        .profile {
-            text-align: center;
-            margin-bottom: 50px;
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
         
-        /* PROFILE IMAGE - Replace the src in HTML to change photo */
+        .orange-dot {
+            width: 30px;
+            height: 30px;
+            background: #d4884f;
+            border-radius: 50%;
+        }
+        
+        .logo-text h1 {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #3a3a3a;
+            margin: 0;
+        }
+        
+        .logo-text p {
+            font-size: 0.85em;
+            color: #666;
+            margin: 0;
+        }
+        
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #3a3a3a;
+            font-size: 0.95em;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: #d4884f;
+        }
+        
+        /* MAIN CONTENT */
+        .hero-section {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+        
+        .left-side {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+        }
+        
         .profile-image {
-            width: 250px;
-            height: 250px;
+            width: 350px;
+            height: 350px;
             border-radius: 50%;
             object-fit: cover;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            background: #d4c4b0;
         }
         
-        /* NAME HEADING */
-        h1 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 3em;
+        .circle-buttons {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .circle-btn {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: #b8a890;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: #3a3a3a;
+            font-weight: 600;
+            font-size: 1em;
+            transition: all 0.3s;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        
+        .circle-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+            background: #a89780;
+        }
+        
+        .right-side h2 {
+            font-size: 4em;
             font-weight: 300;
+            color: #3a3a3a;
             margin-bottom: 10px;
-            color: #2c2c2c;
+            line-height: 1.1;
         }
         
-        /* SUBTITLE */
         .subtitle {
-            font-size: 1.2em;
-            color: #666;
-            font-weight: 300;
-            letter-spacing: 2px;
-            margin-bottom: 40px;
+            font-size: 1.3em;
+            font-weight: 600;
+            color: #3a3a3a;
+            margin-bottom: 30px;
         }
         
-        /* BIO SECTION */
-        .bio {
+        .bio-text p {
+            font-size: 1em;
+            color: #3a3a3a;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+        
+        /* FOOTER */
+        footer {
             background: white;
             padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-            margin-bottom: 30px;
+            margin-top: 100px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 40px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
-        /* PARAGRAPHS - Edit spacing between paragraphs here */
-        .bio p {
-            margin-bottom: 20px;
-            font-size: 1.05em;
-            color: #555;
-            line-height: 1.8;
-        }
-        
-        .bio p:last-child {
-            margin-bottom: 0;
-        }
-        
-        /* GREETING TEXT */
-        .greeting {
+        .footer-section h3 {
+            font-size: 1em;
             font-weight: 600;
-            color: #2c2c2c;
+            color: #3a3a3a;
+            margin-bottom: 10px;
         }
         
-        /* RESPONSIVE - Makes it look good on phones */
-        @media (max-width: 768px) {
-            .container {
-                padding: 40px 15px;
+        .footer-section p,
+        .footer-section a {
+            font-size: 0.95em;
+            color: #666;
+            text-decoration: none;
+        }
+        
+        .footer-section a:hover {
+            color: #d4884f;
+        }
+        
+        .social-link {
+            color: #3a3a3a;
+            font-size: 1.2em;
+            text-decoration: none;
+        }
+        
+        .copyright {
+            text-align: right;
+            font-size: 0.85em;
+            color: #999;
+        }
+        
+        /* RESPONSIVE */
+        @media (max-width: 968px) {
+            .hero-section {
+                grid-template-columns: 1fr;
+                gap: 50px;
+                text-align: center;
             }
             
-            h1 {
-                font-size: 2.2em;
+            .right-side h2 {
+                font-size: 3em;
+            }
+            
+            footer {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .copyright {
+                text-align: center;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 20px;
+                padding: 20px;
             }
             
             .profile-image {
-                width: 200px;
-                height: 200px;
+                width: 250px;
+                height: 250px;
             }
             
-            .bio {
-                padding: 25px;
+            .circle-buttons {
+                gap: 15px;
             }
             
-            .bio p {
-                font-size: 1em;
+            .circle-btn {
+                width: 100px;
+                height: 100px;
+                font-size: 0.9em;
+            }
+            
+            .right-side h2 {
+                font-size: 2.5em;
             }
         }
-        
-        /* COLOR CUSTOMIZATION GUIDE:
-           - Background color: Change #fafafa in body
-           - Text color: Change #333 in body
-           - Card background: Change white in .bio
-           - Heading color: Change #2c2c2c in h1
-           - Link color (if you add links): Add a { color: #your-color; }
-        */
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- PROFILE SECTION -->
-        <div class="profile">
-            <!-- TO CHANGE YOUR PHOTO: Replace the src with your image URL or local path -->
+    <!-- HEADER -->
+    <header>
+        <div class="logo-area">
+            <div class="orange-dot"></div>
+            <div class="logo-text">
+                <h1>Grace Dugan</h1>
+                <p>Writer & Editor</p>
+            </div>
+        </div>
+        <nav>
+            <a href="resume.html">Resume</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+        <div class="left-side">
             <img src="https://static.wixstatic.com/media/42f85d_d9b06b5084534c53b20aed272b639762~mv2.jpg/v1/crop/x_114,y_0,w_2588,h_2586/fill/w_433,h_433,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/original_558d5934-4d62-423c-b970-58af035b1055_PXL_20220616_223842769_PORTRAIT.jpg" 
                  alt="Grace Dugan" 
                  class="profile-image">
             
-            <!-- TO CHANGE YOUR NAME: Edit the text between the <h1> tags -->
-            <h1>Grace Dugan</h1>
-            
-            <!-- TO CHANGE YOUR TITLE: Edit the text below -->
-            <p class="subtitle">Writer & Editor</p>
+            <div class="circle-buttons">
+                <a href="resume.html" class="circle-btn">Resume</a>
+                <a href="portfolio.html" class="circle-btn">Portfolio</a>
+                <a href="contact.html" class="circle-btn">Connect</a>
+            </div>
         </div>
         
-        <!-- BIO SECTION -->
-        <!-- TO EDIT YOUR BIO: Simply change the text between <p> tags -->
-        <!-- TO ADD MORE PARAGRAPHS: Copy a <p>...</p> block and paste it -->
-        <div class="bio">
-            <p class="greeting">Hello and welcome! I'm Grace, an adaptable writer who happily migrates between technical and creative subjects.</p>
+        <div class="right-side">
+            <h2>Grace<br>Dugan</h2>
+            <p class="subtitle">Writer & Editor</p>
             
-            <p>Within the software world, I'm passionate about translating highly technical information into comprehensive, consumable, and widely accessible content. I love learning the "why" behind complex technical choices and understanding how multi-layered systems work to create something engaging for both internal and external consumers.</p>
-            
-            <p>As a creative, I love finding the best way to tell a story -- seeking out topics, generating engaging copy, editing dutifully, using a designers eye to structure information meaningfully and artistically. I've worked with poems, slogans, novels, zine spreads, and more!</p>
+            <div class="bio-text">
+                <p>Hello and welcome! I'm Grace, an adaptable writer who happily migrates between technical and creative subjects.</p>
+                
+                <p>Within the software world, I'm passionate about translating highly technical information into comprehensive, consumable, and widely accessible content. I love learning the "why" behind complex technical choices and understanding how multi-layered systems work to create something engaging for both internal and external consumers.</p>
+                
+                <p>As a creative, I love finding the best way to tell a story -- seeking out topics, generating engaging copy, editing dutifully, using a designers eye to structure information meaningfully and artistically. I've worked with poems, slogans, novels, zine spreads, and more!</p>
+            </div>
         </div>
-    </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-section">
+            <h3>Phone</h3>
+            <p>(978) 501-6404</p>
+        </div>
+        
+        <div class="footer-section">
+            <h3>Email</h3>
+            <a href="mailto:gracedugan@gmail.com">gracedugan@gmail.com</a>
+        </div>
+        
+        <div class="footer-section">
+            <h3>Follow Me</h3>
+            <a href="https://linkedin.com/in/grace-dugan" class="social-link" target="_blank">in</a>
+            <p class="copyright">© 2024 By Grace Dugan</p>
+        </div>
+    </footer>
 </body>
 </html>

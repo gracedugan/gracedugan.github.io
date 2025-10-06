@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resume | Grace Dugan</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400;600&display=swap');
-        
         * {
             margin: 0;
             padding: 0;
@@ -14,338 +12,350 @@
         }
         
         body {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Avenir', 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background-color: #fafafa;
+            color: #3a3a3a;
+            background-color: #e8e4dd;
         }
         
-        nav {
+        header {
             background: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        
-        nav .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
+            padding: 20px 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
         
-        nav .logo {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.5em;
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .orange-dot {
+            width: 30px;
+            height: 30px;
+            background: #d4884f;
+            border-radius: 50%;
+        }
+        
+        .logo-text h1 {
+            font-size: 1.1em;
             font-weight: 600;
-            color: #2c2c2c;
-            text-decoration: none;
+            color: #3a3a3a;
+            margin: 0;
         }
         
-        nav ul {
-            list-style: none;
+        .logo-text p {
+            font-size: 0.85em;
+            color: #666;
+            margin: 0;
+        }
+        
+        nav {
             display: flex;
             gap: 30px;
         }
         
         nav a {
             text-decoration: none;
-            color: #555;
-            font-weight: 400;
+            color: #3a3a3a;
+            font-size: 0.95em;
             transition: color 0.3s;
         }
         
-        nav a:hover {
-            color: #2c2c2c;
-        }
-        
+        nav a:hover,
         nav a.active {
-            color: #2c2c2c;
-            font-weight: 600;
+            color: #d4884f;
         }
         
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 60px 20px;
-        }
-        
-        h1 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 3em;
-            font-weight: 300;
-            margin-bottom: 50px;
-            color: #2c2c2c;
+        .page-title-section {
+            background: white;
+            padding: 60px 40px;
             text-align: center;
         }
         
+        .page-title-section h1 {
+            font-size: 3em;
+            font-weight: 600;
+            color: #3a3a3a;
+        }
+        
+        .timeline-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 60px 40px;
+        }
+        
         h2 {
-            font-family: 'Cormorant Garamond', serif;
             font-size: 2em;
-            font-weight: 400;
-            margin: 40px 0 20px 0;
-            color: #2c2c2c;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 10px;
+            font-weight: 600;
+            margin-bottom: 40px;
+            color: #3a3a3a;
         }
         
-        .job {
-            background: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-            margin-bottom: 20px;
+        .job-entry {
+            display: grid;
+            grid-template-columns: 150px 1fr;
+            gap: 40px;
+            margin-bottom: 50px;
         }
         
-        .job-header {
-            margin-bottom: 15px;
+        .dates {
+            font-size: 1em;
+            color: #666;
+        }
+        
+        .job-content {
+            padding-left: 20px;
+            border-left: 2px solid #ccc;
         }
         
         .job-title {
-            font-size: 1.3em;
+            font-size: 1.2em;
             font-weight: 600;
-            color: #2c2c2c;
+            color: #3a3a3a;
             margin-bottom: 5px;
         }
         
         .company {
             font-size: 1.1em;
-            color: #666;
-            margin-bottom: 5px;
+            color: #d4884f;
+            font-weight: 600;
+            margin-bottom: 15px;
         }
         
-        .dates {
-            font-size: 0.9em;
-            color: #999;
-            font-style: italic;
-        }
-        
-        .job ul {
-            margin-left: 20px;
-            margin-top: 15px;
-        }
-        
-        .job li {
-            margin-bottom: 10px;
+        .job-content p {
             color: #555;
+            margin-bottom: 12px;
+            line-height: 1.7;
         }
         
-        .education {
-            background: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-            margin-bottom: 20px;
+        .education-section,
+        .skills-section {
+            margin-top: 60px;
+        }
+        
+        .edu-content {
+            padding-left: 20px;
+            border-left: 2px solid #ccc;
         }
         
         .degree {
             font-size: 1.2em;
             font-weight: 600;
-            color: #2c2c2c;
+            color: #3a3a3a;
             margin-bottom: 5px;
         }
         
         .school {
             font-size: 1.1em;
-            color: #666;
-            margin-bottom: 5px;
+            color: #d4884f;
+            font-weight: 600;
+            margin-bottom: 15px;
         }
         
-        .edu-details {
+        .edu-content p {
             color: #555;
-            margin-top: 15px;
+            margin-bottom: 10px;
         }
         
-        .edu-details ul {
+        .edu-content ul {
             margin-left: 20px;
             margin-top: 10px;
         }
         
-        .skills {
-            background: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        .edu-content li {
+            color: #555;
+            margin-bottom: 5px;
         }
         
-        .skills p {
+        .skills-content p {
             color: #555;
             margin-bottom: 20px;
+            line-height: 1.7;
         }
         
-        .skills ul {
+        .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 10px;
-            margin-left: 20px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 20px;
         }
         
-        .skills li {
+        .skills-grid li {
             color: #555;
+            list-style: none;
+            padding-left: 15px;
+            position: relative;
+        }
+        
+        .skills-grid li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #d4884f;
         }
         
         @media (max-width: 768px) {
-            nav ul {
-                gap: 15px;
-            }
-            
-            nav a {
-                font-size: 0.9em;
-            }
-            
-            .container {
-                padding: 40px 15px;
-            }
-            
-            h1 {
-                font-size: 2.2em;
-            }
-            
-            .job, .education, .skills {
+            header {
+                flex-direction: column;
+                gap: 20px;
                 padding: 20px;
             }
             
-            .skills ul {
+            .page-title-section h1 {
+                font-size: 2em;
+            }
+            
+            .job-entry {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+            
+            .job-content,
+            .edu-content {
+                border-left: none;
+                padding-left: 0;
+            }
+            
+            .skills-grid {
                 grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
-    <nav>
-        <div class="nav-container">
-            <a href="index.html" class="logo">Grace Dugan</a>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="resume.html" class="active">Resume</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
+    <header>
+        <div class="logo-area">
+            <div class="orange-dot"></div>
+            <div class="logo-text">
+                <h1>Grace Dugan</h1>
+                <p>Writer & Editor</p>
+            </div>
         </div>
-    </nav>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="resume.html" class="active">Resume</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
 
-    <div class="container">
+    <div class="page-title-section">
         <h1>Resume</h1>
-        
+    </div>
+
+    <div class="timeline-container">
         <h2>Work Experience</h2>
         
-        <div class="job">
-            <div class="job-header">
+        <div class="job-entry">
+            <div class="dates">2025 - 2025</div>
+            <div class="job-content">
                 <div class="job-title">Technical Writer, Product Design</div>
                 <div class="company">Klaviyo</div>
-                <div class="dates">2025 - 2025</div>
+                <p>Wrote release-based docs across 10+ product areas, improving adoption and reducing support tickets across personas.</p>
+                <p>Launched docs suite for milestone Custom Objects product, enabling enterprise users to manage data and tailor marketing.</p>
+                <p>Streamlined documentation workflows by leveraging Zendesk, Markdown, and CMS tools for consistency and speed.</p>
+                <p>Impacted by reduction of force.</p>
             </div>
-            <ul>
-                <li>Wrote release-based docs across 10+ product areas, improving adoption and reducing support tickets across personas.</li>
-                <li>Launched docs suite for milestone Custom Objects product, enabling enterprise users to manage data and tailor marketing.</li>
-                <li>Streamlined documentation workflows by leveraging Zendesk, Markdown, and CMS tools for consistency and speed.</li>
-                <li>Impacted by reduction of force.</li>
-            </ul>
         </div>
 
-        <div class="job">
-            <div class="job-header">
+        <div class="job-entry">
+            <div class="dates">2024 - Current</div>
+            <div class="job-content">
                 <div class="job-title">Content Writer & Copy Editor</div>
                 <div class="company">Positive Promotions</div>
-                <div class="dates">2024 - Current</div>
+                <p>Develop engaging B2B content for various educational materials, including guides, blog posts, and promotional campaigns.</p>
+                <p>Researched, authored, and designed an educational packet detailing over 200 creative yet practical health and wellness hacks (36 pages).</p>
+                <p>Wrote multiple blog posts focused on employee appreciation, holidays, and current trends to promote purchasable goods. 15 articles were used to launch the blog. Current testing is being done to measure success.</p>
+                <p>Boosted product sales by 10% within three months by creating resonant, values-driven narratives.</p>
+                <p>Advise graphic designers on the format for guides, checklists, and pamphlets.</p>
             </div>
-            <ul>
-                <li>Develop engaging B2B content for various educational materials, including guides, blog posts, and promotional campaigns.</li>
-                <li>Researched, authored, and designed an educational packet detailing over 200 creative yet practical health and wellness hacks (36 pages).</li>
-                <li>Wrote multiple blog posts focused on employee appreciation, holidays, and current trends to promote purchasable goods. 15 articles were used to launch the blog. Current testing is being done to measure success.</li>
-                <li>Boosted product sales by 10% within three months by creating resonant, values-driven narratives.</li>
-                <li>Advise graphic designers on the format for guides, checklists, and pamphlets.</li>
-            </ul>
         </div>
 
-        <div class="job">
-            <div class="job-header">
+        <div class="job-entry">
+            <div class="dates">2022 - 2023</div>
+            <div class="job-content">
                 <div class="job-title">Technical Writer, User Experience (UX)</div>
                 <div class="company">Bloomberg LP</div>
-                <div class="dates">2022 - 2023</div>
+                <p>Published a high volume of time-sensitive content for the Bloomberg Terminal, specializing in cross-functional Portfolio & Risk Analytics (PORT) projects.</p>
+                <p>Generated promotional UI tours, contextual help tooltips, news articles, comprehensive FAQs, and workflow-based help pages.</p>
+                <p>Outlined, authored, and edited written content using XMetal Author (XML) and in-house tools. Followed a rigorous review and editing process for each deliverable type.</p>
+                <p>Acted as designated editor for BNEW news articles across 15 writers.</p>
+                <p>Collaborated with upwards of 20 deadline-oriented product managers to implement changes across dozens of tickets and ensure accurate content capturing and aligned deadlines.</p>
+                <p>Participated in UX research studies and developed a comprehensive team presentation to share with stakeholders outlining our product suite.</p>
             </div>
-            <ul>
-                <li>Published a high volume of time-sensitive content for the Bloomberg Terminal, specializing in cross-functional Portfolio & Risk Analytics (PORT) projects.</li>
-                <li>Generated promotional UI tours, contextual help tooltips, news articles, comprehensive FAQs, and workflow-based help pages.</li>
-                <li>Outlined, authored, and edited written content using XMetal Author (XML) and in-house tools. Followed a rigorous review and editing process for each deliverable type.</li>
-                <li>Acted as designated editor for BNEW news articles across 15 writers.</li>
-                <li>Collaborated with upwards of 20 deadline-oriented product managers to implement changes across dozens of tickets and ensure accurate content capturing and aligned deadlines.</li>
-                <li>Participated in UX research studies and developed a comprehensive team presentation to share with stakeholders outlining our product suite.</li>
-            </ul>
         </div>
 
-        <div class="job">
-            <div class="job-header">
+        <div class="job-entry">
+            <div class="dates">2021 - 2022<br><em>promoted</em></div>
+            <div class="job-content">
                 <div class="job-title">Technical Writer, Knowledge Management</div>
                 <div class="company">DraftKings Inc</div>
-                <div class="dates">2021 - 2022 (promoted)</div>
+                <p>Authored comprehensive and highly complex technical documentation that received thousands of views and assisted in product launches, system developments, company-wide onboarding, and infrastructure improvements.</p>
+                <p>Embedded into multiple engineering teams where I introduced documentation processes into teams' official Agile models, collaborated with SMEs to develop team-specific technical documentation, and strategized projects with directors/upper-level management to clarify and solidify software development best practices.</p>
+                <p>While embedded into multiple backend and frontend facing engineering teams, I regularly acted as engineering liaison and developer relations advocate.</p>
             </div>
-            <ul>
-                <li>Authored comprehensive and highly complex technical documentation that received thousands of views and assisted in product launches, system developments, company-wide onboarding, and infrastructure improvements.</li>
-                <li>Embedded into multiple engineering teams where I introduced documentation processes into teams' official Agile models, collaborated with SMEs to develop team-specific technical documentation, and strategized projects with directors/upper-level management to clarify and solidify software development best practices.</li>
-                <li>While embedded into multiple backend and frontend facing engineering teams, I regularly acted as engineering liaison and developer relations advocate.</li>
-            </ul>
         </div>
 
-        <div class="job">
-            <div class="job-header">
+        <div class="job-entry">
+            <div class="dates">2020 - 2021</div>
+            <div class="job-content">
                 <div class="job-title">Copy Editor, Knowledge Management</div>
                 <div class="company">DraftKings Inc</div>
-                <div class="dates">2020 - 2021</div>
+                <p>Assisted in managing the company's CMS platform, Confluence. This included auditing and reorganizing spaces based on various data factors, transitioning the company to and from the Cloud instance, leading demonstrations on how to organize and present pages, and curating the Knowledge Management space.</p>
+                <p>Generated company-wide technical writing style guide and glossary.</p>
             </div>
-            <ul>
-                <li>Assisted in managing the company's CMS platform, Confluence. This included auditing and reorganizing spaces based on various data factors, transitioning the company to and from the Cloud instance, leading demonstrations on how to organize and present pages, and curating the Knowledge Management space.</li>
-                <li>Generated company-wide technical writing style guide and glossary.</li>
-            </ul>
         </div>
 
-        <h2>Education</h2>
-        
-        <div class="education">
-            <div class="degree">Bachelor's Degree in English</div>
-            <div class="school">University of Massachusetts Amherst</div>
-            <div class="dates">2016 - 2019</div>
-            <div class="edu-details">
-                <p>Completed my Bachelor of Arts in three years with certificates in Professional Writing and Technical Communication (PWTC) and The Study and Practice of Writing (SPOW).</p>
-                <p>While attending school, I acted as the following:</p>
-                <ul>
-                    <li>Assistant Editor, Jabberwocky Literary Journal</li>
-                    <li>Resident Assistant, UMass Residential Life</li>
-                    <li>Course Instructor, UMass Amherst</li>
-                    <li>Technical Writing Intern, HFA Advising</li>
-                    <li>Writing Tutor, Writing Center</li>
-                    <li>Academic Tutor, UMass Athletics</li>
-                    <li>Social Media Intern, Writing Center</li>
-                    <li>Administrative Assistant, HFA Advising</li>
-                    <li>Board Member, Dean of Students Student Conduct Hearing Board</li>
+        <div class="education-section">
+            <h2>Education</h2>
+            <div class="job-entry">
+                <div class="dates">2016 - 2019</div>
+                <div class="edu-content">
+                    <div class="degree">Bachelor's Degree in English</div>
+                    <div class="school">University of Massachusetts Amherst</div>
+                    <p>Completed my Bachelor of Arts in three years with certificates in Professional Writing and Technical Communication (PWTC) and The Study and Practice of Writing (SPOW).</p>
+                    <p>While attending school, I acted as the following:</p>
+                    <ul>
+                        <li>Assistant Editor, Jabberwocky Literary Journal</li>
+                        <li>Resident Assistant, UMass Residential Life</li>
+                        <li>Course Instructor, UMass Amherst</li>
+                        <li>Technical Writing Intern, HFA Advising</li>
+                        <li>Writing Tutor, Writing Center</li>
+                        <li>Academic Tutor, UMass Athletics</li>
+                        <li>Social Media Intern, Writing Center</li>
+                        <li>Administrative Assistant, HFA Advising</li>
+                        <li>Board Member, Dean of Students Student Conduct Hearing Board</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="skills-section">
+            <h2>Skills & Expertise</h2>
+            <div class="skills-content">
+                <p>I am an expert in creating technical documentation, onboarding content, and marketing materials. I am also an experienced editor, with a keen eye for detail and a passion for clear, concise writing.</p>
+                <p>I am proficient in a wide range of tools, technologies, and content management systems. Examples include:</p>
+                <ul class="skills-grid">
+                    <li>Microsoft Office Suite</li>
+                    <li>Adobe Creative Cloud (ID, PP, PS)</li>
+                    <li>CMS Platforms (Confluence and WordPress)</li>
+                    <li>XMetal Authoring (DITA, XML)</li>
+                    <li>Bloomberg Professional Terminal</li>
+                    <li>Smartsheet</li>
+                    <li>Zendesk</li>
+                    <li>JIRA</li>
+                    <li>SDK Documentation</li>
+                    <li>Agile & Scrum Framework</li>
+                    <li>Grant Writing</li>
+                    <li>MadCap Flare</li>
+                    <li>Microservice Architecture and Documentation</li>
+                    <li>Basic HTML & CSS</li>
                 </ul>
             </div>
-        </div>
-
-        <h2>Skills & Expertise</h2>
-        
-        <div class="skills">
-            <p>I am an expert in creating technical documentation, onboarding content, and marketing materials. I am also an experienced editor, with a keen eye for detail and a passion for clear, concise writing.</p>
-            <p>I am proficient in a wide range of tools, technologies, and content management systems. Examples include:</p>
-            <ul>
-                <li>Microsoft Office Suite</li>
-                <li>Adobe Creative Cloud (ID, PP, PS)</li>
-                <li>CMS Platforms (Confluence and WordPress)</li>
-                <li>XMetal Authoring (DITA, XML)</li>
-                <li>Bloomberg Professional Terminal</li>
-                <li>Smartsheet</li>
-                <li>Zendesk</li>
-                <li>JIRA</li>
-                <li>SDK Documentation</li>
-                <li>Agile & Scrum Framework</li>
-                <li>Grant Writing</li>
-                <li>MadCap Flare</li>
-                <li>Microservice Architecture and Documentation</li>
-                <li>Basic HTML & CSS</li>
-            </ul>
         </div>
     </div>
 </body>

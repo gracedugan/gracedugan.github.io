@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio | Grace Dugan</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400;600&display=swap');
-        
         * {
             margin: 0;
             padding: 0;
@@ -14,297 +12,357 @@
         }
         
         body {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Avenir', 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background-color: #fafafa;
+            color: #3a3a3a;
         }
         
-        nav {
+        header {
             background: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        
-        nav .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
+            padding: 20px 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
         
-        nav .logo {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.5em;
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .orange-dot {
+            width: 30px;
+            height: 30px;
+            background: #d4884f;
+            border-radius: 50%;
+        }
+        
+        .logo-text h1 {
+            font-size: 1.1em;
             font-weight: 600;
-            color: #2c2c2c;
-            text-decoration: none;
+            color: #3a3a3a;
+            margin: 0;
         }
         
-        nav ul {
-            list-style: none;
+        .logo-text p {
+            font-size: 0.85em;
+            color: #666;
+            margin: 0;
+        }
+        
+        nav {
             display: flex;
             gap: 30px;
         }
         
         nav a {
             text-decoration: none;
-            color: #555;
-            font-weight: 400;
+            color: #3a3a3a;
+            font-size: 0.95em;
             transition: color 0.3s;
         }
         
-        nav a:hover {
-            color: #2c2c2c;
-        }
-        
+        nav a:hover,
         nav a.active {
-            color: #2c2c2c;
-            font-weight: 600;
+            color: #d4884f;
         }
         
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 60px 20px;
+        .intro-section {
+            background: #e8e4dd;
+            padding: 60px 40px;
+            text-align: center;
         }
         
-        h1 {
-            font-family: 'Cormorant Garamond', serif;
+        .intro-section h1 {
             font-size: 3em;
-            font-weight: 300;
+            font-weight: 600;
+            color: #3a3a3a;
             margin-bottom: 20px;
-            color: #2c2c2c;
-            text-align: center;
         }
         
-        .intro {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto 50px auto;
+        .intro-section p {
+            max-width: 900px;
+            margin: 0 auto;
             color: #555;
-            font-size: 1.1em;
-        }
-        
-        h2 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2em;
-            font-weight: 400;
-            margin: 50px 0 30px 0;
-            color: #2c2c2c;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 10px;
+            line-height: 1.7;
         }
         
         .company-section {
-            margin-bottom: 40px;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            min-height: 500px;
         }
         
-        .company-header {
+        .company-sidebar {
+            padding: 60px 40px;
             display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 30px;
+            flex-direction: column;
+            justify-content: center;
         }
         
-        .company-name {
-            font-size: 1.5em;
+        .company-sidebar h2 {
+            font-size: 2em;
             font-weight: 600;
-            color: #2c2c2c;
+            color: #3a3a3a;
+            margin-bottom: 20px;
         }
         
-        .company-role {
+        .company-sidebar .role {
             font-size: 1.1em;
-            color: #666;
-            font-style: italic;
+            font-weight: 600;
         }
         
-        .project {
-            background: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-            margin-bottom: 25px;
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+        }
+        
+        .project-card {
+            padding: 40px 30px;
+            text-align: center;
+            border: 1px solid rgba(0,0,0,0.05);
         }
         
         .project-title {
-            font-size: 1.3em;
+            font-size: 1.1em;
             font-weight: 600;
-            color: #2c2c2c;
-            margin-bottom: 5px;
+            color: #3a3a3a;
+            margin-bottom: 15px;
+        }
+        
+        .project-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 20px auto;
+            background: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.85em;
         }
         
         .project-type {
             font-size: 0.9em;
-            color: #999;
+            font-weight: 600;
+            color: #3a3a3a;
             margin-bottom: 15px;
         }
         
-        .project p {
+        .project-description {
+            font-size: 0.9em;
             color: #555;
-            margin-bottom: 15px;
+            line-height: 1.6;
+            text-align: left;
         }
         
-        .project p:last-child {
-            margin-bottom: 0;
-        }
+        /* Company color schemes */
+        .bloomberg { background: #c9b896; }
+        .positive { background: #999; }
+        .positive .projects-grid { background: #e8e4dd; }
+        .draftkings { background: #d4884f; }
+        .draftkings .projects-grid { background: #e8e4dd; }
+        .klaviyo { background: #c9b896; }
+        .klaviyo .projects-grid { background: #e8e4dd; }
+        .various { background: #999; }
+        .various .projects-grid { background: #e8e4dd; }
         
-        @media (max-width: 768px) {
-            nav ul {
-                gap: 15px;
+        .orange-role { color: #d4884f; }
+        
+        @media (max-width: 968px) {
+            .company-section {
+                grid-template-columns: 1fr;
             }
             
-            nav a {
-                font-size: 0.9em;
+            .projects-grid {
+                grid-template-columns: 1fr;
             }
             
-            .container {
-                padding: 40px 15px;
-            }
-            
-            h1 {
-                font-size: 2.2em;
-            }
-            
-            .company-header {
+            header {
                 flex-direction: column;
-                align-items: flex-start;
+                gap: 20px;
             }
             
-            .project {
-                padding: 20px;
+            .intro-section h1 {
+                font-size: 2em;
             }
         }
     </style>
 </head>
 <body>
-    <nav>
-        <div class="company-section">
-            <div class="company-header">
-                <div class="company-name">Positive Promotions</div>
-                <div class="company-role">Copywriter</div>
+    <header>
+        <div class="logo-area">
+            <div class="orange-dot"></div>
+            <div class="logo-text">
+                <h1>Grace Dugan</h1>
+                <p>Writer & Editor</p>
             </div>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="resume.html">Resume</a>
+            <a href="portfolio.html" class="active">Portfolio</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
 
-            <div class="project">
+    <div class="intro-section">
+        <h1>Writing & Design Portfolio</h1>
+        <p>I seek out projects requiring different skill sets, so you'll notice varying pieces across industries. In addition to the following, I've generated video onboarding content, held company-wide learning sessions, and curated long-term documentation plans. What you'll find below is just a snapshot of my writing and design expertise.</p>
+    </div>
+
+    <!-- Bloomberg LP Section -->
+    <div class="company-section">
+        <div class="company-sidebar bloomberg">
+            <h2>Bloomberg LP</h2>
+            <p class="role orange-role">Technical Writer</p>
+        </div>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-title">Promotional UI Tour</div>
+                <div class="project-image">[UI Tour Image]</div>
+                <div class="project-type">Internal & External</div>
+                <div class="project-description">
+                    Tours were created to visually walk users through complex, workflow-based features of new functions. Tours were often written with a benefit-oriented, marketing voice and adhered to a strict set of style and technical guidelines.<br><br>
+                    Although these tours were primarily used for promoting new features, the attached example was critical in onboarding over 40k clients from one function suite to another.<br><br>
+                    <em>Please note: This deliverable was created using in-house tools. As a result, the PDF version has a handful of formatting issues.</em>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-title">News Article</div>
+                <div class="project-image">[News Article Image]</div>
+                <div class="project-type">Internal & External</div>
+                <div class="project-description">
+                    Generated dozens of internal & external Portfolio & Risk Analytics (PORT) oriented BNEW news articles to announce backend calculation changes, update users on current events, and promote upcoming feature releases. Acted as a designated editor for articles across 15 writers.<br><br>
+                    Collaborated in depth with product to perfect content, verify audience demographics, and adhere to launch deadlines.
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-title">Promotional Modals</div>
+                <div class="project-image">[Modal Image]</div>
+                <div class="project-type">Internal & External</div>
+                <div class="project-description">
+                    Wrote three-line promotional modals that directed users' attention to new or underutilized UI features. These 'postcards' included links to detailed help pages which documented features and workflows in more depth. This deliverable often went through multiple rounds of editors to ensure exact language and optimized understanding.<br><br>
+                    Collaborated in depth with product, engineering, and editors to perfect content, adhere to launch deadlines, and track adoption of promoted UI elements.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Positive Promotions Section -->
+    <div class="company-section positive">
+        <div class="company-sidebar">
+            <h2>Positive Promotions</h2>
+            <p class="role orange-role">Copywriter</p>
+        </div>
+        <div class="projects-grid">
+            <div class="project-card">
                 <div class="project-title">Educational Packet</div>
+                <div class="project-image">[Packet Image]</div>
                 <div class="project-type">Schools, Hospitals, Churches</div>
-                <p>Researched, authored, and designed an educational packet detailing over 200 creative yet practical health and wellness hacks (36 pages).</p>
-                <p>Items were crafted to be both innovative and actionable. To maximize accessibility, the guide was written at an average 5th-grade reading level while still engaging adult readers.</p>
-                <p>Provided art direction and design guidelines to align visuals with the content. After several rounds of collaborative reviews and edits, the final collection was approved by the company's CEO and mass produced for distribution to churches, hospitals, schools, and other organizations nationwide.</p>
+                <div class="project-description">
+                    Researched, authored, and designed an educational packet detailing over 200 creative yet practical health and wellness hacks (36 pages).<br><br>
+                    Items were crafted to be both innovative and actionable. To maximize accessibility, the guide was written at an average 5th-grade reading level while still engaging adult readers.<br><br>
+                    Provided art direction and design guidelines to align visuals with the content. After several rounds of collaborative reviews and edits, the final collection was approved by the company's CEO and mass produced for distribution to churches, hospitals, schools, and other organizations nationwide.
+                </div>
             </div>
-
-            <div class="project">
+            
+            <div class="project-card">
                 <div class="project-title">Blog Posts</div>
+                <div class="project-image">[Blog Image]</div>
                 <div class="project-type">Schools, Hospitals, Churches</div>
-                <p>Wrote multiple blog posts focused on employee appreciation, holidays, and current trends to promote purchasable goods. While most were creatively written with the intent of promotion, others are strictly informational and required extensive research.</p>
-                <p>To maximize accessibility and comprehension, blogs are typically formatted in numbered, digestible sections. Though this was not always the case as formatting was altered to suit content.</p>
-                <p>Created 15 articles that were used to launch the blog. Current testing is being done to measure success.</p>
+                <div class="project-description">
+                    Wrote multiple blog posts focused on employee appreciation, holidays, and current trends to promote purchasable goods. While most were creatively written with the intent of promotion, others are strictly informational and required extensive research.<br><br>
+                    To maximize accessibility and comprehension, blogs are typically formatted in numbered, digestible sections. Though this was not always the case as formatting was altered to suit content.<br><br>
+                    Created 15 articles that were used to launch the blog. Current testing is being done to measure success.
+                </div>
             </div>
         </div>
+    </div>
 
-        <div class="company-section">
-            <div class="company-header">
-                <div class="company-name">DraftKings Inc</div>
-                <div class="company-role">Technical Writer</div>
-            </div>
-
-            <div class="project">
+    <!-- DraftKings Section -->
+    <div class="company-section draftkings">
+        <div class="company-sidebar">
+            <h2>DraftKings Inc</h2>
+            <p class="role">Technical Writer</p>
+        </div>
+        <div class="projects-grid">
+            <div class="project-card">
                 <div class="project-title">Widget Integration</div>
+                <div class="project-image">[Widget Image]</div>
                 <div class="project-type">External</div>
-                <p>Working directly with our Marketing team, I generated an integration guide for our external partners that walked non-technical users through the process of adding and modifying DraftKings-specific code snippets to their sites.</p>
-                <p>During the singular user feedback session, there was no constructive feedback or difficulty in utilizing these features. This guide ultimately resulted in the successful integration of our product onto more than two dozen competitive sites.</p>
-                <p><em>Document overview attached.</em></p>
+                <div class="project-description">
+                    Working directly with our Marketing team, I generated an integration guide for our external partners that walked non-technical users through the process of adding and modifying DraftKings-specific code snippets to their sites.<br><br>
+                    During the singular user feedback session, there was no constructive feedback or difficulty in utilizing these features. This guide ultimately resulted in the successful integration of our product onto more than two dozen competitive sites.<br><br>
+                    <em>Document overview attached.</em>
+                </div>
             </div>
-
-            <div class="project">
+            
+            <div class="project-card">
                 <div class="project-title">Git Implementation</div>
+                <div class="project-image">[Git Image]</div>
                 <div class="project-type">Internal</div>
-                <p>Noticed inconsistency in global engineering process and worked with senior leadership to create a document outlining Git use to ensure homogeneous practices.</p>
-                <p>This page contains both overview and process-specific information, acting as the single source of truth for all DraftKings Engineering with an audience emphasis on onboarding engineers. This document highlights my ability to understand technical concepts and apply UX rationale to ensure readability and comprehension for introductory readers.</p>
-                <p><em>Document overview attached.</em></p>
+                <div class="project-description">
+                    Noticed inconsistency in global engineering process and worked with senior leadership to create a document outlining Git use to ensure homogeneous practices.<br><br>
+                    This page contains both overview and process-specific information, acting as the single source of truth for all DraftKings Engineering with an audience emphasis on onboarding engineers. This document highlights my ability to understand technical concepts and apply UX rationale to ensure readability and comprehension for introductory readers.<br><br>
+                    <em>Document overview attached.</em>
+                </div>
             </div>
-
-            <div class="project">
+            
+            <div class="project-card">
                 <div class="project-title">Microservice Guides</div>
+                <div class="project-image">[Microservice Image]</div>
                 <div class="project-type">Internal</div>
-                <p>Collaborated with SMEs on four finance-focused engineering teams to generate extensive technical documentation for each team-owned microservice (35+). I embedded myself into the Jira ticketing process to ensure priority of documentation in the Agile lifecycle and created a universal template for continued development.</p>
-                <p>The above example outlines the service in plain language, catalogs dependencies, and architectural structure. These overviews eased information visibility and accessibility across internal teams and external, third-party stakeholders.</p>
-                <p><em>Document overview attached.</em></p>
+                <div class="project-description">
+                    Collaborated with SMEs on four finance-focused engineering teams to generate extensive technical documentation for each team-owned microservice (35+). I embedded myself into the Jira ticketing process to ensure priority of documentation in the Agile lifecycle and created a universal template for continued development.<br><br>
+                    The above example outlines the service in plain language, catalogs dependencies, and architectural structure. These overviews eased information visibility and accessibility across internal teams and external, third-party stakeholders.<br><br>
+                    <em>Document overview attached.</em>
+                </div>
             </div>
         </div>
+    </div>
 
-        <div class="company-section">
-            <div class="company-header">
-                <div class="company-name">Klaviyo</div>
-                <div class="company-role">Technical Writer</div>
-            </div>
-
-            <div class="project">
+    <!-- Klaviyo Section -->
+    <div class="company-section klaviyo">
+        <div class="company-sidebar">
+            <h2>Klaviyo</h2>
+            <p class="role orange-role">Technical Writer</p>
+        </div>
+        <div class="projects-grid">
+            <div class="project-card">
                 <div class="project-title">Help Center Pages</div>
+                <div class="project-image">[Help Center Image]</div>
                 <div class="project-type">External & Internal</div>
-                <p>Created a comprehensive suite of help pages to support the launch of Custom Objects, a critical new product feature. These resources guided users through complex setup, configuration, data upload, and best practices—highlighting both features and business benefits. As the cornerstone of the product launch, the help content served as the primary resource for large and small organizations adopting the platform, driving successful onboarding and customer adoption at scale.</p>
+                <div class="project-description">
+                    Created a comprehensive suite of help pages to support the launch of Custom Objects, a critical new product feature. These resources guided users through complex setup, configuration, data upload, and best practices—highlighting both features and business benefits. As the cornerstone of the product launch, the help content served as the primary resource for large and small organizations adopting the platform, driving successful onboarding and customer adoption at scale.
+                </div>
             </div>
         </div>
+    </div>
 
-        <h2>Design Deliverables</h2>
-
-        <div class="company-section">
-            <div class="project">
+    <!-- Design Deliverables Section -->
+    <div class="company-section various">
+        <div class="company-sidebar">
+            <h2>Various Employers</h2>
+            <p class="role">Design Deliverables</p>
+        </div>
+        <div class="projects-grid">
+            <div class="project-card">
                 <div class="project-title">Branding Materials</div>
+                <div class="project-image">[Branding Image]</div>
                 <div class="project-type">Marketing Ambassadors</div>
-                <p>While acting as Social Media Intern at The Writing Center, I partnered with the Director to create and implement social media campaigns. In addition to conducting research on outreach and branding, I developed a set of marketing materials to implement across social media platforms.</p>
-                <p>In the above document, I used Adobe Photoshop to generate a series of stickers to sell on campus, increasing public awareness and providing low-lift marketing.</p>
+                <div class="project-description">
+                    While acting as Social Media Intern at The Writing Center, I partnered with the Director to create and implement social media campaigns. In addition to conducting research on outreach and branding, I developed a set of marketing materials to implement across social media platforms.<br><br>
+                    In the above document, I used Adobe Photoshop to generate a series of stickers to sell on campus, increasing public awareness and providing low-lift marketing.
+                </div>
             </div>
         </div>
     </div>
 </body>
-</html>="nav-container">
-            <a href="index.html" class="logo">Grace Dugan</a>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="resume.html">Resume</a></li>
-                <li><a href="portfolio.html" class="active">Portfolio</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <div class="container">
-        <h1>Writing & Design Portfolio</h1>
-        
-        <p class="intro">I seek out projects requiring different skill sets, so you'll notice varying pieces across industries. In addition to the following, I've generated video onboarding content, held company-wide learning sessions, and curated long-term documentation plans. What you'll find below is just a snapshot of my writing and design expertise.</p>
-
-        <div class="company-section">
-            <div class="company-header">
-                <div class="company-name">Bloomberg LP</div>
-                <div class="company-role">Technical Writer</div>
-            </div>
-
-            <div class="project">
-                <div class="project-title">Promotional UI Tour</div>
-                <div class="project-type">Internal & External</div>
-                <p>Tours were created to visually walk users through complex, workflow-based features of new functions. Tours were often written with a benefit-oriented, marketing voice and adhered to a strict set of style and technical guidelines.</p>
-                <p>Although these tours were primarily used for promoting new features, the attached example was critical in onboarding over 40k clients from one function suite to another.</p>
-                <p><em>Please note: This deliverable was created using in-house tools. As a result, the PDF version has a handful of formatting issues.</em></p>
-            </div>
-
-            <div class="project">
-                <div class="project-title">News Article</div>
-                <div class="project-type">Internal & External</div>
-                <p>Generated dozens of internal & external Portfolio & Risk Analytics (PORT) oriented BNEW news articles to announce backend calculation changes, update users on current events, and promote upcoming feature releases. Acted as a designated editor for articles across 15 writers.</p>
-                <p>Collaborated in depth with product to perfect content, verify audience demographics, and adhere to launch deadlines.</p>
-            </div>
-
-            <div class="project">
-                <div class="project-title">Promotional Modals</div>
-                <div class="project-type">Internal & External</div>
-                <p>Wrote three-line promotional modals that directed users' attention to new or underutilized UI features. These 'postcards' included links to detailed help pages which documented features and workflows in more depth. This deliverable often went through multiple rounds of editors to ensure exact language and optimized understanding.</p>
-                <p>Collaborated in depth with product, engineering, and editors to perfect content, adhere to launch deadlines, and track adoption of promoted UI elements.</p>
-            </div>
-        </div>
-
-        <div class
+</html>
